@@ -2,6 +2,7 @@ import express from 'express';
 import cron from 'node-cron';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import expenseEmail from './emailService/Expense'
 
 dotenv.config()
 const app = express();
@@ -18,7 +19,8 @@ mongoose.connect(process.env.MONGO_URL).then(() =>
 
 const Schedule = () =>{
     cron.schedule('* * * * *', () => {
-  console.log('Running a task every minute');
+  expenseEmail(messageOption)
+        
     
 });
 }
