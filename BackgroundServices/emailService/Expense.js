@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
-import sendMail from './helpers/sendMail'
-import Expense from './modles/Expense';
+import sendMail from '../helpers/sendMail.js'
+import Expense from '../models/Expense.js';
 dotenv.config();
 
 const expenseEmail = async() =>{
